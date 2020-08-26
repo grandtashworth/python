@@ -1,4 +1,4 @@
-#!/home/grandt/PycharmProjects/Tarot/venv/bin/python
+#!/usr/bin/python
 
 """
 __name__ = "Python 3 Card Tarot Spread"

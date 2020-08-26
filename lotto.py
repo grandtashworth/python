@@ -1,4 +1,4 @@
-#!/home/grandt/PycharmProjects/Lotto/venv/bin/python
+#!/usr/bin/python
 
 """
 __name__ = "Lucky Lotto Numbers"
