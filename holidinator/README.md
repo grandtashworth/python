@@ -13,7 +13,7 @@ Make sure you have a webserver running, with cgi-bin enabled to run scripts (you
 The way I run this script is from another script to answer the age old question of whether "today" is a holiday. As humans that's easy, but machines need a little more coaxing, especially if it is a monolithic monitoring system, or a production system that doesnt need to start up it's software on a public holiday. All you need to add to your script is something like the function below where the $_calval needs to be determined by whatever makes sense to you (some people call their hostnames after geographical locations, other people use a cmdb and generate facts) the $_calval is a calendar location such as Australia, UnitedKingdom, UnitedStates (see QuantLib docs on this)
 
 Example:
-
+```javascript
 #!/bin/bash
 __today(){
         _calval=$1
@@ -36,4 +36,4 @@ __today(){
 __today UnitedStates
 __today Australia
 exit $?
-
+```
