@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# cgi-bin bash script to pass variables to a python script
+#
+# Change the Python location below if needed
+#
+_python=/usr/bin/python
+#
+_script=/var/www/cgi-bin/qdate
+#
+echo "Content-type: text/html"
+echo ''
+[ ! -z $QUERY_STRING ] && {
+	_cal_val=$(echo $QUERY_STRING | cut -d'=' -f2 | sed 's/%2F/\//g' | cut -d'&' -f1)
+	_day_val=$(echo $QUERY_STRING | cut -d'=' -f3 | cut -d'&' -f1)
+	_month_val=$(echo $QUERY_STRING | cut -d'=' -f4 | cut -d'&' -f1)
+	_year_val=$(echo $QUERY_STRING | cut -d'=' -f5 | cut -d'&' -f1)
+	$_python $_script $_cal_val $_day_val $_month_val $_year_val
+}
